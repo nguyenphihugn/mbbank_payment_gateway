@@ -1,0 +1,17 @@
+{% if show_payment_button %}
+<div class="mb-payment-button-container mt-4">
+	<button class="btn btn-primary btn-sm mb-payment-btn" data-course="{{ course }}">
+		{{ _("Pay Now with MB Bank") }}
+	</button>
+	<p class="small text-muted mt-2">{{ _("Secure payment with MB Bank") }}</p>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		$(".mb-payment-btn").on("click", function () {
+			const courseId = $(this).data("course");
+			frappe.mbbank_payment.initPayment(courseId);
+		});
+	});
+</script>
+{% endif %}

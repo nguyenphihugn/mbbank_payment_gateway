@@ -1,0 +1,139 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2025-04-24 12:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "enabled",
+    "environment_section",
+    "environment",
+    "column_break_4",
+    "service_provider",
+    "credentials_section",
+    "client_id",
+    "column_break_7",
+    "client_secret",
+    "api_configuration_section",
+    "auth_url",
+    "base_url",
+    "channel_id",
+    "webhook_settings_section",
+    "webhook_url"
+  ],
+  "fields": [
+    {
+      "default": "0",
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled"
+    },
+    {
+      "fieldname": "environment_section",
+      "fieldtype": "Section Break",
+      "label": "Environment"
+    },
+    {
+      "default": "Sandbox",
+      "fieldname": "environment",
+      "fieldtype": "Select",
+      "label": "Environment",
+      "options": "Sandbox\nProduction",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "MB Bank",
+      "fieldname": "service_provider",
+      "fieldtype": "Data",
+      "label": "Service Provider",
+      "read_only": 1
+    },
+    {
+      "fieldname": "credentials_section",
+      "fieldtype": "Section Break",
+      "label": "Credentials"
+    },
+    {
+      "fieldname": "client_id",
+      "fieldtype": "Data",
+      "label": "Client ID (Consumer Key)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_7",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "client_secret",
+      "fieldtype": "Password",
+      "label": "Client Secret (Consumer Secret)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_configuration_section",
+      "fieldtype": "Section Break",
+      "label": "API Configuration"
+    },
+    {
+      "description": "URL for authentication",
+      "fieldname": "auth_url",
+      "fieldtype": "Data",
+      "label": "Auth URL",
+      "reqd": 1
+    },
+    {
+      "description": "Base URL for API endpoints",
+      "fieldname": "base_url",
+      "fieldtype": "Data",
+      "label": "Base URL",
+      "reqd": 1
+    },
+    {
+      "description": "Channel ID provided by MB Bank",
+      "fieldname": "channel_id",
+      "fieldtype": "Data",
+      "label": "Channel ID"
+    },
+    {
+      "fieldname": "webhook_settings_section",
+      "fieldtype": "Section Break",
+      "label": "Webhook Settings"
+    },
+    {
+      "description": "URL that will receive payment notifications from MB Bank",
+      "fieldname": "webhook_url",
+      "fieldtype": "Data",
+      "label": "Webhook URL",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "issingle": 1,
+  "links": [],
+  "modified": "2025-04-24 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "MB Bank Payment Gateway",
+  "name": "MB Bank Settings",
+  "naming_rule": "Random",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

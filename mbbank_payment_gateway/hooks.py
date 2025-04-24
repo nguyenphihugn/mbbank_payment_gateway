@@ -26,11 +26,11 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/mbbank_payment_gateway/css/mbbank_payment_gateway.css"
-# app_include_js = "/assets/mbbank_payment_gateway/js/mbbank_payment_gateway.js"
+app_include_js = "/assets/mbbank_payment_gateway/js/mbbank_payment.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/mbbank_payment_gateway/css/mbbank_payment_gateway.css"
-# web_include_js = "/assets/mbbank_payment_gateway/js/mbbank_payment_gateway.js"
+web_include_js = "/assets/mbbank_payment_gateway/js/mbbank_payment.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "mbbank_payment_gateway/public/scss/website"
@@ -131,7 +131,11 @@ app_license = "mit"
 # Document Events
 # ---------------
 # Hook on document methods and events
-
+doc_events = {
+	"LMS Course Enrollment": {
+		"validate": "mbbank_payment_gateway.api.validate_course_enrollment"
+	}
+}
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
@@ -142,7 +146,11 @@ app_license = "mit"
 
 # Scheduled Tasks
 # ---------------
-
+scheduler_events = {
+	"hourly": [
+		"mbbank_payment_gateway.tasks.verify_pending_payments"
+	]
+}
 # scheduler_events = {
 # 	"all": [
 # 		"mbbank_payment_gateway.tasks.all"
@@ -236,4 +244,8 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+website_route_rules = [
+	{"from_route": "/mbbank/payment_callback", "to_route": "mbbank_payment_gateway.api.payment_callback"}
+]
 

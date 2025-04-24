@@ -1,0 +1,183 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "format:MBPAY-{transaction_id}",
+  "creation": "2025-04-24 12:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "transaction_section",
+    "client_message_id",
+    "transaction_id",
+    "request_id",
+    "column_break_4",
+    "status",
+    "creation_date",
+    "reference_section",
+    "reference_doctype",
+    "reference_name",
+    "column_break_10",
+    "user",
+    "payment_details_section",
+    "amount",
+    "description",
+    "column_break_15",
+    "payment_url",
+    "response_data_section",
+    "request_data",
+    "response_data",
+    "callback_data"
+  ],
+  "fields": [
+    {
+      "fieldname": "transaction_section",
+      "fieldtype": "Section Break",
+      "label": "Transaction"
+    },
+    {
+      "fieldname": "client_message_id",
+      "fieldtype": "Data",
+      "label": "Client Message ID",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "transaction_id",
+      "fieldtype": "Data",
+      "label": "Transaction ID",
+      "read_only": 1,
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "request_id",
+      "fieldtype": "Data",
+      "label": "Request ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Initiated\nPending\nSuccess\nFailed\nCancelled\nExpired\nUnknown",
+      "reqd": 1
+    },
+    {
+      "default": "Now",
+      "fieldname": "creation_date",
+      "fieldtype": "Datetime",
+      "label": "Creation Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reference_section",
+      "fieldtype": "Section Break",
+      "label": "Reference"
+    },
+    {
+      "fieldname": "reference_doctype",
+      "fieldtype": "Link",
+      "label": "Reference DocType",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "reference_name",
+      "fieldtype": "Dynamic Link",
+      "label": "Reference Name",
+      "options": "reference_doctype"
+    },
+    {
+      "fieldname": "column_break_10",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User"
+    },
+    {
+      "fieldname": "payment_details_section",
+      "fieldtype": "Section Break",
+      "label": "Payment Details"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "column_break_15",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "payment_url",
+      "fieldtype": "Data",
+      "label": "Payment URL",
+      "read_only": 1
+    },
+    {
+      "fieldname": "response_data_section",
+      "fieldtype": "Section Break",
+      "label": "Response Data"
+    },
+    {
+      "fieldname": "request_data",
+      "fieldtype": "Code",
+      "label": "Request Data",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "response_data",
+      "fieldtype": "Code",
+      "label": "Response Data",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "callback_data",
+      "fieldtype": "Code",
+      "label": "Callback Data",
+      "options": "JSON"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2025-04-24 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "MB Bank Payment Gateway",
+  "name": "MB Bank Payment Request",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "All"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}
